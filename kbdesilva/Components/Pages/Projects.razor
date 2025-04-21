@@ -1,0 +1,35 @@
+﻿@page "/projects"
+
+@inherits GlobalBase
+<PageTitle>Projects</PageTitle>
+<h2 class="mb-4 animate__animated animate__fadeIn">Projects</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    @foreach (var project in projects)
+    {
+        <div class="col animate__animated animate__fadeIn">
+            <div class="card h-100 shadow rounded-4 border-0">
+                <div class="card-body d-flex flex-column p-4">
+                    <h5 class="card-title text-primary fw-semibold mb-2">@project.Title</h5>
+                    <p class="card-text text-muted flex-grow-1 mb-3">@project.Description</p>
+
+                    @if (project.Technologies.Any())
+                    {
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            @foreach (var tech in project.Technologies)
+                            {
+                                <span class="badge rounded-pill bg-light text-dark border">@tech</span>
+                            }
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(project.Url))
+                    {
+                        <a href="@project.Url" target="_blank" class="btn btn-sm btn-outline-primary w-100 mt-auto">
+                            <i class="bi bi-arrow-up-right me-1"></i> View Project
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,32 @@
+﻿@page "/home"
+@inherits GlobalBase
+<PageTitle>Home</PageTitle>
+
+<div class="d-flex flex-column justify-content-center align-items-start vh-100 px-4">
+    <h1 class="display-4 fw-bold mb-2 animate__animated animate__fadeIn">
+        Hi, I'm @Info.Name
+    </h1>
+
+    <h4 class="text-primary mb-3 animate__animated animate__fadeIn">
+        @Info.Title
+    </h4>
+
+    <p class="lead text-muted mb-4 animate__animated animate__fadeIn">
+        Software Engineer specializing in Blazor, .NET 8, and modern web solutions. Experienced in building scalable trading and workforce platforms with strong backend architecture and modern UI/UX.
+    </p>
+
+    <ul class="list-unstyled text-muted animate__animated animate__fadeIn">
+        <li><strong>Email:</strong> <a href="mailto:@Info.Email">@Info.Email</a></li>
+        <li><strong>Phone:</strong> @Info.Phone</li>
+        <li><strong>Location:</strong> @Info.Location</li>
+        <li>
+            <strong>LinkedIn:</strong>
+            <a href="@Info.LinkedIn" target="_blank">@Info.LinkedIn</a>
+        </li>
+    </ul>
+
+    <div class="mt-4 d-flex gap-3 animate__animated animate__fadeIn">
+        <NavLink class="btn btn-primary btn-lg" href="/projects">View Projects</NavLink>
+        <NavLink class="btn btn-outline-secondary btn-lg" href="/about">More About Me</NavLink>
+    </div>
+</div>

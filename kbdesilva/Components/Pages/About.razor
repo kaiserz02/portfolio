@@ -1,0 +1,63 @@
+﻿@page "/about"
+@inherits GlobalBase
+<PageTitle>About Me</PageTitle>
+
+<section class="container">
+    <div class="row py-2">
+        <div class="col-md-4 mb-3 animate__animated animate__fadeIn">
+            <img src="images/unnamed.png" alt="Kim Brian De Silva" class="img-fluid rounded-circle shadow-sm" />
+        </div>
+
+        <div class="col-md-8 animate__animated animate__fadeIn">
+            <h2 class="fw-bold">Hi, I'm Kim Brian De Silva</h2>
+            <p class="lead text-muted">
+                @aboutMeDescription
+            </p>
+        </div>
+    </div>
+
+    <h3 class="fw-bold mb-3 animate__animated animate__fadeIn">Work Experience</h3>
+    <div class="row">
+        @foreach (var experience in WorkExperiences)
+        {
+            <div class="col-md-6 mb-3 animate__animated animate__fadeIn">
+                <div class="card shadow-sm border-light rounded-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@experience.Position</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@experience.Company | @experience.Duration</h6>
+                        <p class="card-text">@experience.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <h3 class="fw-bold mb-3 animate__animated animate__fadeIn">Certifications & Training</h3>
+    <div class="row">
+        @foreach (var cert in Certifications)
+        {
+            <div class="col-md-4 mb-3 animate__animated animate__fadeIn">
+                <div class="card shadow-sm border-light rounded-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@cert.Title</h5>
+                        <p class="card-text">@cert.Provider</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <h3 class="fw-bold mb-3 animate__animated animate__fadeIn">Education</h3>
+    <div class="row">
+        <div class="col-md-6 mb-3 animate__animated animate__fadeIn">
+            <div class="card shadow-sm border-light rounded-3">
+                <div class="card-body">
+                    <h5 class="card-title">Bachelor of Science in Information Technology</h5>
+                    <p class="card-text fw-bold">Angeles University Foundation Inc.</p>
+                    <p class="card-text"><small class="text-muted">Specialization: Web & Mobile Development</small></p>
+                    <p class="card-text"><small class="text-muted">Scholarships: AUF Scholarship, Tulong Dong Gonzales Dunong Scholarship Program</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
