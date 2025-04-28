@@ -7,7 +7,9 @@ namespace kbdesilva.Components
     public class GlobalBase : ComponentBase
     {
         [Inject]
-        public NavigationManager navigation { get; set; }
+        public NavigationManager navigation { get; set; }   
+        [Inject]
+        public HttpClient httpClient { get; set; }
         [Inject]
         public IJSRuntime jSRuntime { get; set; }
 
